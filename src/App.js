@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css"
+import ChatboxReciever, { ChatboxSender } from "./components/Chat/Chatbox";
+import InputText from "./components/Chat/InputText";
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ width:"1000px", height:'1000px', backgroundColor:"whitesmoke" , padding:10}} >
+      <ChatboxReciever/>
+      <ChatboxSender/>
+      <ChatboxReciever/>
+      <ChatboxSender/>
+      <InputText/>
     </div>
+   
   );
 }
 
