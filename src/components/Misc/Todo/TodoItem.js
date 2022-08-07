@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 
 
 
-export default function TodoItem({item, deleteItem , index}) {
+export default function TodoItem({item, deleteItem , index , updateItem}) {
 
     const [strikethrough , setStrikethrough] = useState(item.done)
 
@@ -24,6 +24,11 @@ export default function TodoItem({item, deleteItem , index}) {
             textDecoration: strikethrough && 'line-through'
          }
         }
+
+    function changeDone(){ //changeCompleted
+      setStrikethrough(strikethrough => !strikethrough)
+        updateItem({...item ,done: !item.done})
+    }
     
     return (
         <div style={styles.container}>
@@ -31,14 +36,16 @@ export default function TodoItem({item, deleteItem , index}) {
             <span>
                 <input 
                     //value={strikethrough} 
-                    onChange={() => setStrikethrough(!strikethrough)} 
+                    onChange={changeDone} 
                     style={styles.checkbox} 
                     type="checkbox"
                     checked={strikethrough}
                  >
                 </input>
                 <DeleteFilled onClick={()=> deleteItem(index)} />
+                <button onClick={()=> console.log(item, strikethrough)} >Item</button>
             </span> 
+
         </div>
     )
 }

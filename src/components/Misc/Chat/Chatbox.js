@@ -2,14 +2,14 @@ import { Avatar , Image } from 'antd'
 import React from 'react'
 
 
-export default function ChatboxReciever() {
+export default function ChatboxReciever({user, message , avatar}) {
   return (
     <div style={{  display:'flex' ,justifyContent:'flex-start' , flexDirection:'row'}}>
          <Avatar
           size={50}
          src={
         <Image
-        src={"https://joeschmoe.io/api/v1/random"}
+        src={avatar}
         style={{
          objectFit:'cover',
          width:45,
@@ -20,27 +20,24 @@ export default function ChatboxReciever() {
       }
     />
         <p style={{padding:10 , backgroundColor:'#dcf8c6' , borderRadius:10, maxWidth:'60%'}}>
-                <strong>Kutlo Sek</strong> <br></br>
-                Hello World People and Fudge  Hello World People and Fudge Hello World People and Fudge
-                Hello World People and Fudge  Hello World People and Fudge Hello World People and Fudge
+                <strong style={{fontSize:13}} >{user}</strong> <br></br>
+                {message}
         </p>
     </div>
   )
 }
-export function ChatboxSender() {
+export function ChatboxSender({message,avatar}) {
   return (
     <div style={{ display:'flex', justifyContent:'flex-end', flexDirection:'row' }}>
-        
         <p style={{padding:10 , backgroundColor:'#fff' , borderRadius:10, maxWidth:'60%'}}>
-                <strong>Kutlo Sek</strong> <br></br>
-                Hello World People and Fudge Hello World People and Fudge  Hello World People and Fudge
+                {message}
         </p>
         <Avatar
           style={{ marginLeft:5 ,  }}
           size={50}
          src={
         <Image
-        src={"https://joeschmoe.io/api/v1/random"}
+        src={avatar}
         style={{
          objectFit:'cover',
          width:45,

@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css"
-import ChatboxReciever, { ChatboxSender } from "./components/Chat/Chatbox";
-import InputText from "./components/Chat/InputText";
-
+import Login from "./components/Login/Login";
+import { BrowserRouter,Routes, Route } from "react-router-dom";
+import Home from "./components/Login/Home";
+import TodoApp from "./components/Misc/Todo/TodoApp";
 
 
 function App() {
+  
 
   return (
-    <div style={{ width:"1000px", height:'1000px', backgroundColor:"whitesmoke" , padding:10}} >
-      <ChatboxReciever/>
-      <ChatboxSender/>
-      <ChatboxReciever/>
-      <ChatboxSender/>
-      <InputText/>
-    </div>
+  // <BrowserRouter>
+  //   <Routes>
+  //       <Route path="/" element={<Login/>} />
+  //       <Route path="/home" element={<Home/>} />
+  //   </Routes>
+  // </BrowserRouter>
+  <div>
+    <TodoApp/>
+  </div>
    
   );
 }

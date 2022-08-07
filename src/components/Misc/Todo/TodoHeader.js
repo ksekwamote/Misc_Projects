@@ -16,7 +16,12 @@ export default function TodoHeader({addItem}) {
                  >
                 </input>  
                 <button 
-                    style={{width:100 , height:30 , backgroundColor:'skyblue', borderWidth:0 , fontWeight:'bold', color:'#fff'}}
+                    style={{width:100 , 
+                        height:30 , 
+                        backgroundColor:'skyblue', 
+                        borderWidth:0 , 
+                        fontWeight:'bold', 
+                        color:'#fff'}}
                     onClick={() => {addItem(todo); setTodo('')}}
                 >Submit</button>
             </span>
